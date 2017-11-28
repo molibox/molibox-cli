@@ -27,7 +27,7 @@ var fse = require('fs-extra');
 
 // webpack
 var webpack = require('webpack');
-console.log('~~~~~~~~~~~~ gulpfile require is ready!')
+
 
 colors.setTheme({
     info: ['bold', 'green']
@@ -58,10 +58,7 @@ gulp.task('changelog', function () {
 });
 
 gulp.task('pack_demo',function(cb) {
-    console.log(colors.yellow('~~~~~~~~~~~~~~~gulp task[pack_demo] is begin to run...'));
     var p = path.join(process.cwd(),'./demo/demolist');
-
-    console.log('>>>>>>>>>>path is ' + p);
 
     function explorer(paths){
         var arr = [],code=[];
@@ -117,8 +114,8 @@ gulp.task('pack_demo',function(cb) {
                     data = data.replace(/\'..\/..\/src\'/ig,'\''+name+'\'');
 
                     //
-                    // if(data.match(/import(\s+)(.*)(\s+)(from)(\s+)\'molibox\'/ig)[0].match(/{/)== null){
-                    //     data = data.replace(/import(\s+)(.*)(\s+)(from)(\s+)\'molibox\'/ig,'import$1{$2}$3$4$5\'molibox\'')
+                    // if(data.match(/import(\s+)(.*)(\s+)(from)(\s+)\'tinper-bee\'/ig)[0].match(/{/)== null){
+                    //     data = data.replace(/import(\s+)(.*)(\s+)(from)(\s+)\'tinper-bee\'/ig,'import$1{$2}$3$4$5\'tinper-bee\'')
                     // }
 
                 }catch(e){
@@ -157,15 +154,13 @@ gulp.task('pack_demo',function(cb) {
                     // 重要 打包过程中的语法错误反映在stats中
                     console.log('webpack log:' + stats);
                     if(err) cb(err);
-                    console.info(colors.info('###### pack_demo done ######'));
+                    console.info('###### pack_demo done ######');
                     cb();
                 });
-                console.log('demo/index.js It\'s saved!');
             });
         });
     };
     explorer(p);
-    console.info(colors.info('###### pack_demo done2 ######'));
 });
 
 gulp.task('pack_build', ['clean_build'], function(cb) {
@@ -200,7 +195,6 @@ gulp.task('sass_component', function () {
 });
 
 gulp.task('sass_demo', function(cb) {
-    console.log('~~~~~~~~ task[sass_demo] is running')
     gulp.src([path.join(process.cwd(), './demo/**/*.scss')])
         .pipe(sourcemaps.init())
         .pipe(sass())
@@ -222,9 +216,7 @@ gulp.task('sass_demo', function(cb) {
 });
 
 gulp.task('clean_build', function () {
-    var p = util.getFromCwd('build');
-    console.log(colors.red('============== build p is ' + p))
-    return shelljs.rm('-rf', p);
+    return shelljs.rm('-rf', util.getFromCwd('build'));
 });
 
 
@@ -241,9 +233,6 @@ gulp.task('server', [
     'pack_demo',
     'sass_demo'
 ], function() {
-    console.log('~~~~~~~~~~gulp task[server] function is begin to run...');
-
-    //return;
   var port = util.getPkg().config.port || 3000;
     browserSync({
         server: {
@@ -261,14 +250,12 @@ gulp.task('server', [
 
     gulp.watch(path.join(process.cwd(),'./demo/demolist/*.js'),['pack_demo']);
 
-    console.log('~~~~~~~~~~gulp task[server] is done!');
-
 });
 
 
 gulp.task('build', ['pack_build', 'sass_component'], function() {});
 
-gulp.task('start', ['server'],function(){console.log('gulp task[start] is done!')});
+gulp.task('start', ['server']);
 
 gulp.task('dep', function() {
     var commands = util.getPackages();

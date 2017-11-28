@@ -6,7 +6,7 @@ $logger.verbose('index.js is beginning');
 
 
 var program = require('commander');
-var colors = require('colors/safe');
+//var colors = require('colors/safe');
 var packageInfo = require('../../package.json');
 
 program

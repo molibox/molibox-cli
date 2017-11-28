@@ -1,35 +1,14 @@
 {
-  "_from": "molibox-cli",
-  "_id": "molibox-cli@0.0.1",
-  "_inBundle": false,
-  "_integrity": "sha1-c9SfkNZItxIVsdLJJlUMAeKk6bI=",
-  "_location": "/molibox-cli",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "molibox-cli",
-    "name": "molibox-cli",
-    "escapedName": "molibox-cli",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/molibox-cli/-/molibox-cli-0.4.4.tgz",
-  "_shasum": "73d49f90d648b71215b1d2c926550c01e2a4e9b2",
-  "_spec": "molibox-cli",
-  "_where": "/Users/gct/work/gho/molibox/molibox-icon",
-  "author": {
-    "name": "yonyou iuapfed"
-  },
+  "name": "molibox-cli",
+  "version": "0.0.2",
+  "description": "development tools for molibox",
+  "main": "index.js",
+  "scripts": {},
+  "author": "yonyou moli gct",
+  "license": "MIT",
   "bin": {
-    "molibox-cli": "./bin/molibox-cli.js"
+    "molibox": "./bin/molibox.js"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "babel-core": "~6.9.0",
     "babel-loader": "~6.2.1",
@@ -61,6 +40,7 @@
     "gulp-es3ify": "0.0.0",
     "gulp-eslint": "~2.0.0",
     "gulp-just-replace": "~1.0.2",
+    "gulp-sass": "~2.3.2",
     "gulp-sourcemaps": "~1.6.0",
     "html-wiring": "~1.2.0",
     "inquirer": "~1.0.0",
@@ -75,15 +55,5 @@
     "svg2react-loader": "^1.0.3",
     "webpack": "~1.x",
     "webpack-dev-middleware": "~1.6.1"
-  },
-  "deprecated": false,
-  "description": "development tools for molibox",
-  "license": "MIT",
-  "main": "index.js",
-  "name": "molibox-cli",
-  "scripts": {},
-  "version": "0.0.1",
-  "devDependencies": {
-    "gulp-sass": "^3.1.0"
   }
 }
