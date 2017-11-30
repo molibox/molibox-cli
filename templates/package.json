@@ -6,8 +6,8 @@
     "react",
     "react-component",
     "<%= packageName%>",
-    "iuap-design",
-    "tinper-bee",
+    "yonyou moli",
+    "molibox",
     "<%= appname%>"
   ],
   "engines": {
@@ -15,7 +15,7 @@
   },
   "homepage": "<%= repo_url%>",
   "author": "<%= author%>",
-  "repository": "http://github.com/tinper-bee/<%= packageName%>",
+  "repository": "http://github.com/molibox/<%= packageName%>",
   "bugs": "<%= repo_url%>/issues",
   "license": "MIT",
   "main": "./build/index.js",
@@ -26,15 +26,15 @@
     }
   },
   "scripts": {
-    "dev": "bee-tools run start",
-    "build": "bee-tools run build",
-    "lint": "bee-tools-test run lint",
-    "test": "bee-tools-test run test",
-    "chrome": "bee-tools-test run chrome",
-    "coveralls": "bee-tools-test run coverage",
-    "browsers": "bee-tools-test run browsers",
-    "pub": "bee-tools run pub",
-    "changelog": "bee-tools run changelog"
+    "dev": "molibox run dev",
+    "build": "molibox run build",
+    "lint": "molibox-test run lint",
+    "test": "molibox-test run test",
+    "chrome": "molibox-test run chrome",
+    "coveralls": "molibox-test run coverage",
+    "browsers": "molibox-test run browsers",
+    "pub": "molibox run pub",
+    "changelog": "molibox run changelog"
   },
   "dependencies": {
     "classnames": "^2.2.5",

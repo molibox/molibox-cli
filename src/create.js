@@ -2,19 +2,22 @@ var path = require('path');
 var fse = require('fs-extra');
 var fs = require('fs');
 //var moment = require('moment');
+var $logger = require('./cli/logger');
+$logger.verbose('create.js is beginning...');
 
 module.exports = function (name, options) {
-var author = options.author || 'Yonyou FED',
+    var author = options.author || 'Yonyou Moli',
     pkgName = options.pkgName || name,
     version = options.tbVersion || '0.0.1',
-    repoUrl = options.repoUrl || 'https://github.com/tinper-bee/' + name + '.git',
+    repoUrl = options.repoUrl || 'https://github.com/molibox/' + name + '.git',
     port = options.port || 3000;
 
 
 
 
-    if(!/bee-/.test(name)){
-        console.log('component name should be bee-componentName');
+    if(!/molibox-/.test(name)){
+        $logger.error('your component name is '+ name);
+        $logger.error('component name must be molibox-componentName, please change it to molibox-xxx');
         return;
     }
 
@@ -36,7 +39,7 @@ var srcComponentContent = [
 "import PropTypes from 'prop-types';",
 "const propTypes = {};",
 "const defaultProps = {};",
-"class " + AppName + " extends Component {render(){return(<h2>Welcome use tinper-bee</h2> )}};",
+"class " + AppName + " extends Component {render(){return(<h2>Welcome use molibox-cli</h2> )}};",
 AppName + ".propTypes = propTypes;",
 AppName + ".defaultProps = defaultProps;",
 "export default " + AppName + ";"
@@ -72,7 +75,7 @@ var demojs = [
 var demoIndexJs = [
 "import Demo from './" + AppName + "Demo';",
 "import ReactDOM from 'react-dom';",
-"ReactDOM.render(<Demo/>, document.getElementById('tinperBeeDemo'));"
+"ReactDOM.render(<Demo/>, document.getElementById('moliboxDemo'));"
 ].join('\n');
 
 var testComponentjs = [
@@ -110,7 +113,7 @@ var demo1 = [
     "render () {",
     "return (",
     "<div>",
-    "欢迎使用老赵DEMO系统",
+    "欢迎使用 MOLIBOX DEMO 系统",
     "</div>",
     ")",
     "}",

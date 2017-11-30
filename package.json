@@ -1,6 +1,6 @@
 {
   "name": "molibox-cli",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "development tools for molibox",
   "main": "index.js",
   "scripts": {},

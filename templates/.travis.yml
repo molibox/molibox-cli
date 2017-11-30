@@ -14,8 +14,8 @@ env:
     - NPM_CONFIG_PROGRESS="false"
 
 before_install:
-  - npm install -g bee-tools
-  - npm install -g bee-tools-test
+  - npm install -g molibox-cli
+  - npm install -g molibox-cli-test
   
 script:  npm test
 

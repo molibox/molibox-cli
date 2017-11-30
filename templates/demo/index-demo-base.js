@@ -68,4 +68,4 @@ class DemoGroup extends Component {
     }
 }
 
-ReactDOM.render(<DemoGroup/>, document.getElementById('tinperBeeDemo'));
+ReactDOM.render(<DemoGroup/>, document.getElementById('moliboxDemo'));

@@ -27,7 +27,7 @@ if (proc) {
 
 //脚手架开始
 program
-    .command('create [dir]')
+    .command('init [dir]')
     .description('生成一个空组件')
     .option('-a, --author <name>', '作者')
     .option('-p, --port <port>', '服务端口号')

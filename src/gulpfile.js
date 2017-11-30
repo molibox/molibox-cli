@@ -253,9 +253,15 @@ gulp.task('server', [
 });
 
 
-gulp.task('build', ['pack_build', 'sass_component'], function() {});
+gulp.task('build', ['pack_build', 'sass_component'], function() {
+    console.log(colors.info('###### build done ######'));
+});
 
-gulp.task('start', ['server']);
+
+gulp.task('dev', ['server'], function() {
+    console.log(colors.info('###### dev done ######'));
+});
+gulp.task('start', ['dev']);
 
 gulp.task('dep', function() {
     var commands = util.getPackages();

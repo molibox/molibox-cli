@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 var $logger = require('./logger');
-$logger.verbose('run.js is beginning');
+$logger.verbose('run.js is beginning...');
 
 
 
@@ -22,21 +22,23 @@ program.on('--help', function() {
 });
 
 if(typeof process.argv == "object"){
-    $logger.verbose(JSON.stringify(process.argv));
+    $logger.verbose('the process.argv is ' + JSON.stringify(process.argv));
 }
 program.parse(process.argv);
 
 var task = program.args[0];
-$logger.verbose('program.args[0] is ' + task);
+$logger.verbose('program.args[0] is [' + task + ']');
+
 if (!task) {
     $logger.verbose('program.args[0] is ' + task);
-    $logger.verbose('help will run......')
+    $logger.verbose('cmd [help] will run......')
     program.help()
-    $logger.verbose('help will run over!')
+    $logger.verbose('cmd [help] run over!')
 } else {
-    $logger.verbose('gulp will running...')
+    $logger.verbose('gulp will require to run...')
     var gulp = require('gulp');
     require('../gulpfile');
+    $logger.verbose('gulp task['+task+'] will run...')
     gulp.start(task);
     $logger.verbose('run.js run over!')
 }
